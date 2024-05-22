@@ -1,0 +1,76 @@
+<div class="page-header">
+    <nz-page-header nzBackIcon >
+      <nz-page-header-title>Search</nz-page-header-title>
+          <nz-page-header-content>
+                    <div nz-row>
+                        <div nz-col nzSpan="8">
+                            <input nz-input placeholder="search all" [(ngModel)]="query" type="text" />
+                        </div>
+                        <div nz-col nzSpan="8">
+                            <button nz-button class="button" (click)="serachAll()">Search</button>
+                        </div>
+                        <div nz-col nzSpan="8" style="text-align:right;" >
+                            <button *ngIf="showBtn" nz-button class="button" (click)="showModal()">Add +</button>
+                        </div>
+                    </div>
+      </nz-page-header-content>
+    </nz-page-header>
+  </div>
+
+<div nz-row class="row-bottom">
+    <div nz-col *ngFor="let item of listData; index as i">
+        <div style="background: #ffffff;padding:30px;">
+            <nz-card class="card-size" style="width:300px;" [nzBordered]="false" [nzTitle]="item.name">
+                <span>Category: </span><p>{{ item.type }}</p>
+                <span>Details: </span><p>{{ item.itemDetail }}</p>
+                <span>Order Date: </span><p>{{ item.orderDate }} </p>
+                <span>Status: </span><p>{{ item.status }}</p>
+                <span>Serial Number: </span><p>{{ item.serial }}</p>
+              <button *ngIf="showBtn" nz-button nzType="default" (click)="showEditModal(i)">EDIT</button>
+            </nz-card>
+        </div>
+    </div>
+</div>
+
+
+<nz-modal
+      [(nzVisible)]="isVisible"
+      nzTitle="Add"
+      (nzOnCancel)="handleCancel()"
+      (nzOnOk)="handleOk()"
+      [nzOkLoading]="isOkLoading"
+    >
+      <div *nzModalContent>
+          <p>Name</p>
+          <input nz-input placeholder="Name" [(ngModel)]="name" type="text" />
+          <p>Category</p>
+          <input nz-input placeholder="Category" [(ngModel)]="category" type="text" />
+          <p>Detail</p>
+          <input nz-input placeholder="Detail" [(ngModel)]="detail" type="text" />
+          <p>Order Date</p>
+          <nz-date-picker [(ngModel)]="orderDate" (ngModelChange)="onChange($event)"></nz-date-picker>
+          <p>Serial Number</p>
+          <input nz-input placeholder="Serial Number" [(ngModel)]="serialNumber" type="text" />
+      </div>
+    </nz-modal>
+
+    <nz-modal
+      [(nzVisible)]="isEditVisible"
+      nzTitle="Edit"
+      (nzOnCancel)="handleEditCancel()"
+      (nzOnOk)="handleEditOk()"
+      [nzOkLoading]="isOkEditLoading"
+    >
+      <div *nzModalContent>
+          <p>Name</p>
+          <input nz-input placeholder="Name" [(ngModel)]="nameTemp" type="text" />
+          <p>Category</p>
+          <input nz-input placeholder="Category" [(ngModel)]="categoryTemp" type="text" />
+          <p>Detail</p>
+          <input nz-input placeholder="Detail" [(ngModel)]="detailTemp" type="text" />
+          <p>Order Date</p>
+          <nz-date-picker [(ngModel)]="orderDateTemp" (ngModelChange)="onEditChange($event)"></nz-date-picker>
+          <p>Serial Number</p>
+          <input nz-input placeholder="Serial Number" [(ngModel)]="serialNumberTemp" type="text" />
+      </div>
+    </nz-modal>

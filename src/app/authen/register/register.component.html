@@ -1,0 +1,11 @@
+<div nz-row style="justify-content: center;">
+    <div nz-col>
+        <p>Username</p>
+        <input nz-input placeholder="Username" [(ngModel)]="userName" type="text" required/>
+        <p>Password</p>
+        <input nz-input placeholder="Password" [(ngModel)]="password" type="password" required/>
+        <p>Name</p>
+        <input nz-input placeholder="Name" [(ngModel)]="name" type="text"/>
+        <button nz-button nzType="default" style="margin-right: 10px;margin-top: 10px;" (click)="createAcc()">Create new account</button>
+    </div>
+</div>

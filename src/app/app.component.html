@@ -1,0 +1,35 @@
+<nz-layout>
+    <nz-header>
+      <div nz-row >
+        <div nz-col nzFlex="auto">
+            <div nz-menu nzMode="horizontal">
+                <div style="text-align: right;">
+                    <div style="margin-right: 30px;">
+                        <div nz-row>
+                            <div nz-col nzSpan="12">
+                                <div (click)="goToHomePage()">
+                                    <h1 style="text-align: left; margin-left: 20px;">TPCS Public Co,Ltd.</h1>
+                                </div>
+                            </div>
+                            <div nz-col nzSpan="12" style="justify-content: flex-end;">
+                                <button *ngIf="showBtn" nz-button nzType="default" style="margin-right: 10px;" (click)="goToLoginPage()">LOGIN</button>
+                                <button *ngIf="showBtn" nz-button nzType="default" (click)="goToRegisterPage()">REGISTER</button>
+                                <button *ngIf="!showBtn" nz-button nzType="default" (click)="logout()">LOG OUT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </nz-header>
+    <nz-content>
+        <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer>
+        <div style="text-align: center;">
+            Office Supplies ©2024 Implement By Angular
+        </div>
+    </nz-footer>
+  </nz-layout>
+  

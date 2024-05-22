@@ -1,0 +1,28 @@
+span {
+    font-weight: 1000;
+}
+
+.row-bottom {
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.page-header {
+    justify-content: center;
+    max-width: 1800px;
+    margin-left: 27px;
+}
+
+.home-text > [nz-col] {
+    margin-left: clamp(20px, 5%, 10vw); 
+  }
+
+.button {
+    background-color: rgb(92, 92, 92);
+    color: white;
+}
+
+.card-size {
+    height: 400px;
+    width: 100%;
+}
