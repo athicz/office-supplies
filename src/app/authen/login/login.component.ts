@@ -35,7 +35,7 @@ export class LoginComponent {
           this.router.navigate([''], { queryParams: params });
           setTimeout(() => {
             window.location.reload();
-          }, 100)
+          }, 100) 
         } else {
           alert('Login failed. Please try again.');
         }
