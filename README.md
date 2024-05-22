@@ -163,3 +163,8 @@ INSERT INTO supplies
 (id, `type`, name, order_date, create_date, update_date, item_detail, status, serial_number)
 VALUES(30, 'Cleaning', 'Broombomer', '2024-05-17', '2024-05-22 17:38:57', '2024-05-22 17:59:16', 'Cotswold', 'Available', '05003');
 >>>>>>> 860dc99e9bd1b210bf44e7aa4f1038800ccdd0fa
+
+Introduction 
+1. you can click start to see all of supplies or log in for update and add information of supplies.
+2. in search page you can search by typing any information (id, serial number, name, category and order date) to search the supplies.
+3. you can register if you have no an account.
